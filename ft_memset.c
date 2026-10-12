@@ -6,7 +6,7 @@
 /*   By: kothman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 12:05:31 by kothman           #+#    #+#             */
-/*   Updated: 2026/09/24 14:26:53 by kothman          ###   ########.fr       */
+/*   Updated: 2026/10/06 22:25:21 by kothman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,29 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned char	*dest;
+	size_t			index;
+	unsigned char	*ptr;
 
-	dest = (unsigned char *)s;
-	while (n != 0)
+	ptr = (unsigned char *)s;
+	index = 0;
+	while (index < n)
 	{
-		*dest = (unsigned char)c;
-		dest ++;
-		n--;
+		ptr[index] = (unsigned char)c;
+		index += 1;
 	}
 	return (s);
 }
 /*#include <stdio.h>
-int main ()
+
+int	main(void)
 {
-	char dest[] = "khaled";
-	char letter = 't';
-	size_t len = 2;
-	char *c;
-	c = (ft_memset(dest,letter,len));
-	printf("%s",c);
+	char	dest[] = "khaled";
+	char	letter;
+	size_t	len;
+	char	*c;
+
+	letter = 't';
+	len = 2;
+	c = (ft_memset(dest, letter, len));
+	printf("%s", c);
 }*/
